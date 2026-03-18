@@ -1,5 +1,7 @@
   const videos = document.querySelectorAll(".work-video");
   const cursor = document.getElementById('cursor');
+  const contactSection = document.getElementById("contact");
+
   document.addEventListener('mousemove', e => {
     cursor.style.left = e.clientX + 'px';
     cursor.style.top = e.clientY + 'px';
@@ -46,4 +48,22 @@ const observer = new IntersectionObserver((entries) => {
 
 videos.forEach(video => {
   observer.observe(video);
+});
+
+contactSection.addEventListener("mouseenter", () => {
+  cursor.style.background = "#F8F7F5"; // off-white
+});
+
+contactSection.addEventListener("mouseleave", () => {
+  cursor.style.background = "#111110"; // back to default
+});
+
+contactSection.addEventListener("mouseenter", () => {
+  cursor.style.background = "#F8F7F5";
+  cursor.style.borderColor = "#F8F7F5";
+});
+
+contactSection.addEventListener("mouseleave", () => {
+  cursor.style.background = "#111110";
+  cursor.style.borderColor = "#111110";
 });

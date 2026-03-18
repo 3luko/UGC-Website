@@ -474,6 +474,67 @@ nav {
   font-weight: 300;
 }
 
+#analytics {
+  padding: 8rem 3rem 7rem;
+  background: var(--white);
+}
+
+.analytics-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 4rem;
+}
+
+.analytics-title {
+  font-family: var(--syne);
+  font-weight: 800;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+}
+
+.analytics-title em {
+  font-family: var(--body);
+  font-style: italic;
+  font-weight: 300;
+  font-size: 0.7em;
+  color: var(--mid);
+}
+
+.analytics-sub {
+  font-size: 0.8rem;
+  color: var(--mid);
+  max-width: 200px;
+  text-align: right;
+}
+
+.analytics-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  max-width: 900px;
+}
+
+.analytics-shot {
+  background: var(--off-white);
+  padding: 1rem;
+  border: 1px solid var(--lighter);
+  transition: transform 0.3s ease;
+}
+
+.analytics-shot:hover {
+  transform: translateY(-4px);
+}
+
+.analytics-shot img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
 #contact {
   background: var(--ink);
   color: var(--off-white);
@@ -535,6 +596,44 @@ nav {
 }
 .contact-tiktok:hover { border-color: var(--off-white); }
 .tt-icon { width: 14px; height: 14px; fill: var(--off-white); flex-shrink: 0; }
+
+.contact-instagram {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--syne);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--off-white);
+  text-decoration: none;
+  border-bottom: 1px solid #2A2A27;
+  padding-bottom: 0.3rem;
+  transition: border-color 0.2s;
+  margin-left: 1.5rem; /* keeps spacing from TikTok */
+}
+
+.contact-instagram:hover {
+  border-color: var(--off-white);
+}
+
+#contact:hover ~ .cursor,
+#contact:hover .cursor {
+  background: var(--off-white);
+}
+
+#contact:hover ~ .cursor.hover,
+#contact:hover .cursor.hover {
+  border: 1.5px solid var(--off-white);
+}
+
+.ig-icon {
+  width: 14px;
+  height: 14px;
+  fill: var(--off-white);
+  flex-shrink: 0;
+}
 
 .contact-form { display: flex; flex-direction: column; gap: 0; }
 .form-field {
