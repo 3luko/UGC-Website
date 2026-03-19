@@ -232,15 +232,22 @@ nav {
 }
 
 .about-image {
-  margin-top: 2.5rem;
-  max-width: 400px;
+  margin: 2rem 0 2.5rem;
+  max-width: 520px; /* bigger presence */
 }
 
 .about-image img {
   width: 100%;
-  height: auto;
-  border-radius: 12px;
+  height: 420px;
   object-fit: cover;
+  border-radius: 16px;
+  filter: grayscale(100%);
+  transition: filter 0.4s ease, transform 0.3s ease;
+}
+
+.about-image img:hover {
+  filter: grayscale(0%);
+  transform: translateY(-6px);
 }
 
 
@@ -423,6 +430,28 @@ nav {
 .work-thumb-bg.c3 { background: #E2DDD8; }
 .work-thumb-bg.c4 { background: #D9D3CD; }
 .work-thumb-bg.c5 { background: #E8E4E0; }
+
+/* video expand css and mute button */
+.expand-btn,
+.mute-btn {
+  position: absolute;
+  bottom: 0.6rem;
+  z-index: 5;
+  background: rgba(255,255,255,0.9);
+  border: none;
+  font-size: 0.7rem;
+  padding: 0.4rem 0.5rem;
+  cursor: none;
+  font-family: var(--syne);
+}
+
+.expand-btn {
+  right: 0.6rem;
+}
+
+.mute-btn {
+  left: 0.6rem;
+}
 
 .work-play {
   position: relative;

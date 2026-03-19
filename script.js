@@ -67,3 +67,38 @@ contactSection.addEventListener("mouseleave", () => {
   cursor.style.background = "#111110";
   cursor.style.borderColor = "#111110";
 });
+
+// FULLSCREEN LOGIC
+document.querySelectorAll(".expand-btn").forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    e.stopPropagation();
+
+    const video = btn.closest(".work-thumb").querySelector("video");
+
+    if (video.requestFullscreen) {
+      video.requestFullscreen();
+    } else if (video.webkitRequestFullscreen) {
+      video.webkitRequestFullscreen();
+    } else if (video.msRequestFullscreen) {
+      video.msRequestFullscreen();
+    }
+
+    video.controls = true; // show controls in fullscreen
+    video.muted = false;
+    video.play();
+  });
+});
+
+// UNMUTE AND MUTE BUTTON
+document.querySelectorAll(".mute-btn").forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    e.stopPropagation();
+
+    const video = btn.closest(".work-thumb").querySelector("video");
+
+    video.muted = !video.muted;
+
+    // update icon
+    btn.textContent = video.muted ? "🔇" : "🔊";
+  });
+});
